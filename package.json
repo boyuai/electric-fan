@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --base=/user-assets/6074/electric-fan/",
     "preview": "vite preview"
   },
   "dependencies": {

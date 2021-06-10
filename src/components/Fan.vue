@@ -1,9 +1,16 @@
 <template>
-  <audio id="switch-audio" src="/audio/switch.mp3"></audio>
+  <audio id="switch-audio" src="https://staticcdn.boyuai.com/user-assets/6074/electric-fan/audio/switch.mp3"></audio>
+
   <div id="fan">
     <div class="header">
+      <div class="circle">
+        <img
+          alt="bby"
+          crossOrigin="anonymous"
+          src="https://staticcdn.boyuai.com/user-assets/6074/um3brVBxWreYNEeqHNjYtt/波波鱼.png"
+        />
+      </div>
       <div :key="count" :class="leafs">
-        <div class="circle"></div>
         <div class="leaf-1"></div>
         <div class="leaf-2"></div>
         <div class="leaf-3"></div>
@@ -52,7 +59,7 @@ const audioElm = ref<HTMLAudioElement | null>(null);
 function initAudioElm() {
   let audio = new Audio();
   audio.preload = "metadata";
-  audio.src = "/audio/fan.wav";
+  audio.src = "https://staticcdn.boyuai.com/user-assets/6074/electric-fan/audio/fan.wav";
   audio.load();
   audioElm.value = audio;
 }
@@ -143,7 +150,7 @@ $neck-height: 60px;
 $footer-height: 10px;
 $footer-width: 150px;
 
-$circle-width: 15px;
+$circle-width: 64px;
 $circle-border-width: 8px;
 $circle-position: math.div($leaf-width, 2) -
   (math.div($circle-width, 2) + $circle-border-width);
@@ -172,6 +179,24 @@ $circle-position: math.div($leaf-width, 2) -
     z-index: 1;
     border: solid $header-border-width $border-color;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .circle {
+      width: $circle-width;
+      height: $circle-width;
+      background: white;
+      z-index: 100;
+      border: solid $circle-border-width $border-color;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 50px;
+      }
+    }
+
     .leafs {
       z-index: 2;
       position: absolute;
@@ -181,15 +206,6 @@ $circle-position: math.div($leaf-width, 2) -
       height: $leaf-width;
       top: $header-border-width;
       left: $header-border-width;
-      .circle {
-        width: $circle-width;
-        height: $circle-width;
-        border: solid $circle-border-width $border-color;
-        border-radius: 50%;
-        position: absolute;
-        left: $circle-position;
-        top: $circle-position;
-      }
       .leaf {
         width: 72px;
         height: 60px;
@@ -268,5 +284,19 @@ $circle-position: math.div($leaf-width, 2) -
   .label {
     margin-top: 10px;
   }
+}
+
+.el-radio-button__inner {
+  border: none;
+}
+.el-radio-button:first-child .el-radio-button__inner {
+  border-left: none;
+}
+.el-radio-button__inner:hover {
+  color: black;
+}
+.el-radio-button__orig-radio:checked + .el-radio-button__inner {
+  background-color: black;
+  box-shadow: none;
 }
 </style>

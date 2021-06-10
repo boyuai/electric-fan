@@ -3,14 +3,12 @@
     <h3 :title="description">
       {{ title }}
       <br />
-      <small>
-        {{ description }}
-      </small>
+      {{ description }}
     </h3>
 
     <fan></fan>
 
-    <div class="footer">
+    <!-- <div class="footer">
       <div style="margin: 1rem">
         <el-button>
           <a :href="adImageLink" target="_blank"
@@ -19,7 +17,7 @@
         </el-button>
       </div>
       <vue-about-me :copyright="copyright" :links="links"></vue-about-me>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -35,8 +33,8 @@ export default defineComponent({
   name: "app",
   data() {
     return {
-      title: "夏日清凉小风扇",
-      description: "除了没有风，什么都好！",
+      title: "噢少年！竟然被你找到了这块宝地！不愧是你！",
+      description: "坐下来吹吹风休息一下吧~",
       copyright: {
         name: "Electric Fan",
         repo: "electric-fan",
